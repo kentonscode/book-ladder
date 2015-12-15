@@ -6,5 +6,7 @@ var authorSearch = require('./server-routes/author-search-route.js');
 app.use('/title-search', titleSearch);
 app.use('/author-search', authorSearch);
 
+app.use(express.static('./'));
+
 
  app.listen(1337);
