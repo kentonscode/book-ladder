@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 </head>
   <body>
+    <div class='results' ng-controller='BookSearch as bookSearch'>
+      {{bookSearch.title}}
 
     <!-- Modules -->
     <script src='./app.js'></script>
