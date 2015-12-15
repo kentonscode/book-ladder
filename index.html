@@ -5,11 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Book Ladder</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
   <body>
-    <div class='results' ng-controller='BookSearch as bookSearch'>
-      {{bookSearch.title}}
-
+    <div class='results' ng-controller='authorSearch as author'>
+      {{author.books}}
+      <input type="text" ng-model='author.term'>
+      <button type="button" class="btn btn-primary" ng-click='author.search()'>search</button>
+      {{ author.term}}
+    </div>
     <!-- Modules -->
     <script src='./app.js'></script>
     <!-- Controllers -->
