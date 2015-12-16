@@ -9,10 +9,13 @@
 </head>
   <body>
     <div class='results' ng-controller='authorSearch as author'>
-      {{author.books}}
       <input type="text" ng-model='author.term'>
       <button type="button" class="btn btn-primary" ng-click='author.search()'>search</button>
-      {{ author.term }}
+      <ul>
+       <li ng-repeat="book in author.books">
+          {{book.selfLink}}
+        </li>
+      </ul>
     </div>
     <!-- Modules -->
     <script src='./app.js'></script>
