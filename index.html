@@ -11,20 +11,22 @@
     <div class='results' ng-controller='authorSearch as author'>
       <input type="text" ng-model='author.term'>
       <button type="button" class="btn btn-primary" ng-click='author.search()'>Author Search</button>
-      <ul>
-       <li ng-repeat="book in author.books" >
-          {{book.volumeInfo.title}}
-          {{book.volumeInfo.subtitle}}
-          <em>by</em>
-          {{book.volumeInfo.authors}}
-          {{book.searchInfo.textSnippet}}
-          <em>published</em>
-          {{book.volumeInfo.publishedDate}}
-          <a ng-href="{{book.volumeInfo.previewLink}}"/>Preview</a>
-          <img ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" />
-          <a ng-show="book.accessInfo.pdf.isAvailable" ng-href="{{book.accessInfo.pdf.downloadLink}}"/>download</a>
-        </li>
-      </ul>
+      <table>
+        <tr>
+         <td ng-repeat="book in author.books" >
+            {{book.volumeInfo.title}}
+            {{book.volumeInfo.subtitle}}
+            <em>by</em>
+            {{book.volumeInfo.authors}}
+            {{book.searchInfo.textSnippet}}
+            <em>published</em>
+            {{book.volumeInfo.publishedDate}}
+            <a ng-href="{{book.volumeInfo.previewLink}}"/>Preview</a>
+            <img ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" />
+            <a ng-show="book.accessInfo.pdf.isAvailable" ng-href="{{book.accessInfo.pdf.downloadLink}}"/>download</a>
+          </td>
+        </tr>
+      </table>
     </div>
     <div class='title-results' ng-controller='titleSearch as title'>
       <input type="text" ng-model='title.term'>
