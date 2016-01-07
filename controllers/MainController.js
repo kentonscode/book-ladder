@@ -13,3 +13,16 @@ app.controller('titleSearch', ['$http', function ($http) {
   .then(function (response) {vm.books = response.data.items;});
 };
 }]);
+
+//working on creating a service. 
+
+app.controller('serviceTest', function($scope, bookSearch){
+  $scope.helloWorld = bookSearch.helloWorld;
+  
+});
+
+app.service('bookSearch', function() {
+  this.helloWorld = function() {
+    console.log('service function!');
+  };
+});
