@@ -14,10 +14,10 @@
       </div>
     </div>
     <div class='search container-fuild'>
-      <div class='row author col-sm-offset-8 col-md-offset-8 col-lg-offset-8'>
+      <div class='row author col-xs-offset-3 col-sm-offset-8 col-md-offset-8 col-lg-offset-8'>
         <div class='results' ng-controller='authorSearch as author'>
-          <input type="text" ng-model='author.term'>
-          <button type="button" class="btn btn-primary" ng-click='author.search()'>Author Search</button>
+          <input type="text" ng-model='author.term' placeholder='Enter Author'>
+          <button type="button" class="btn btn-primary" ng-click='author.search()'>Search</button>
           <table  class="table">
              <tr ng-repeat="book in author.books" >
                 <td>{{book.volumeInfo.title}}</td>
@@ -33,26 +33,24 @@
               </tr>
           </table>
         </div>
-      </div>  
-    </div>
-    <div class='row title col-sm-offset-8 col-md-offset-8 col-lg-offset-8'>
-      <div class='title-results' ng-controller='titleSearch as title'>
-        <input type="text" ng-model='title.term'>
-         <button type="button" class="btn btn-primary" ng-click='title.search()'>Title Search</button>
-        <table  class="table">
-         <tr ng-repeat="title in title.books" >
-            <td>{{title.volumeInfo.title}}</td>
-            <td>{{title.volumeInfo.subtitle}}</td>
-            <td><em>by</em></td>
-            <td>{{title.volumeInfo.authors}}</td>
-            <td>{{title.searchInfo.textSnippet}}<td>
-            <td><em>published</em></td>
-            <td>{{title.volumeInfo.publishedDate}}</td>
-            <td><td><a ng-href="{{title.volumeInfo.previewLink}}"/>Preview</a></td>
-            <td><img ng-src="{{title.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
-            <td><a ng-show="title.accessInfo.pdf.isAvailable" ng-href="{{title.accessInfo.pdf.downloadLink}}"/>download</a></td>
-          </tr>
-        </table>
+        <div class='title-results' ng-controller='titleSearch as title'>
+          <input type="text" ng-model='title.term' placeholder='Enter Title'>
+           <button type="button" class="btn btn-primary" ng-click='title.search()'>Search</button>
+          <table  class="table">
+           <tr ng-repeat="title in title.books" >
+              <td>{{title.volumeInfo.title}}</td>
+              <td>{{title.volumeInfo.subtitle}}</td>
+              <td><em>by</em></td>
+              <td>{{title.volumeInfo.authors}}</td>
+              <td>{{title.searchInfo.textSnippet}}<td>
+              <td><em>published</em></td>
+              <td>{{title.volumeInfo.publishedDate}}</td>
+              <td><td><a ng-href="{{title.volumeInfo.previewLink}}"/>Preview</a></td>
+              <td><img ng-src="{{title.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
+              <td><a ng-show="title.accessInfo.pdf.isAvailable" ng-href="{{title.accessInfo.pdf.downloadLink}}"/>download</a></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>  
     <!-- Modules -->
