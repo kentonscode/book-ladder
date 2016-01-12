@@ -1,8 +1,21 @@
 @font-face {
-    font-family: constantine;
-    src: url(./font/constantine.ttf);
+  font-family: constantine;
+  src: url(./font/constantine.ttf);
 }
 
 .main-img {
-   width: 100%;
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+}
+
+.search {
+  margin-top: 10%;
+}
+
+.search-icon {
+  position:relative;
+  margin-top: 40%;
+  margin-left: 43%;
+  max-width: 10%;
 }

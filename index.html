@@ -8,10 +8,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/main.css">
 </head>
-  <body>
-    <div class="header-image container-fluid">
-      <div class="row">
-        <img src="./img/books-header.jpg" class="main-img img-responsive">
+<body>
+  <div class="header-image container-fluid">
+    <div class="row">
+      <img src="./img/books-header.jpg" class="main-img img-responsive">
+      <div>
+        <a href="#"><img src="./img/search-icon.png" class="search-icon img-responsive">
+        </div>  
       </div>
     </div>
     <div class='search container-fuild'>
@@ -20,43 +23,45 @@
           <input type="text" ng-model='author.term' placeholder='Enter Author'>
           <button type="button" class="btn btn-primary" ng-click='author.search()'>Search</button>
           <table  class="table">
-             <tr ng-repeat="book in author.books" >
-                <td>{{book.volumeInfo.title}}</td>
-                <td>{{book.volumeInfo.subtitle}}</td>
-                <td><em>by</em></td>
-                <td>{{book.volumeInfo.authors}}</td>
-                <td>{{book.searchInfo.textSnippet}}</td>
-                <td><em>published</em></td>
-                <td>{{book.volumeInfo.publishedDate}}</td>
-                <td><a ng-href="{{book.volumeInfo.previewLink}}"/>Preview</a></td>
-                <td><img ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
-                <td><a ng-show="book.accessInfo.pdf.isAvailable" ng-href="{{book.accessInfo.pdf.downloadLink}}"/>download</a></td>
-              </tr>
-          </table>
-        </div>
-        <div class='title-results' ng-controller='titleSearch as title'>
-          <input type="text" ng-model='title.term' placeholder='Enter Title'>
-           <button type="button" class="btn btn-primary" ng-click='title.search()'>Search</button>
-          <table  class="table">
-           <tr ng-repeat="title in title.books" >
-              <td>{{title.volumeInfo.title}}</td>
-              <td>{{title.volumeInfo.subtitle}}</td>
-              <td><em>by</em></td>
-              <td>{{title.volumeInfo.authors}}</td>
-              <td>{{title.searchInfo.textSnippet}}<td>
-              <td><em>published</em></td>
-              <td>{{title.volumeInfo.publishedDate}}</td>
-              <td><td><a ng-href="{{title.volumeInfo.previewLink}}"/>Preview</a></td>
-              <td><img ng-src="{{title.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
-              <td><a ng-show="title.accessInfo.pdf.isAvailable" ng-href="{{title.accessInfo.pdf.downloadLink}}"/>download</a></td>
-            </tr>
-          </table>
-        </div>
+           <tr ng-repeat="book in author.books" >
+            <td>{{book.volumeInfo.title}}</td>
+            <td>{{book.volumeInfo.subtitle}}</td>
+            <td><em>by</em></td>
+            <td>{{book.volumeInfo.authors}}</td>
+            <td>{{book.searchInfo.textSnippet}}</td>
+            <td><em>published</em></td>
+            <td>{{book.volumeInfo.publishedDate}}</td>
+            <td><a ng-href="{{book.volumeInfo.previewLink}}"/>Preview</a></td>
+            <td><img ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
+            <td><a ng-show="book.accessInfo.pdf.isAvailable" ng-href="{{book.accessInfo.pdf.downloadLink}}"/>download</a></td>
+          </tr>
+        </table>
       </div>
-    </div> 
-    <!-- Modules -->
-    <script src='./app.js'></script>
-    <!-- Controllers -->
-    <script src= 'controllers/MainController.js'></script>
-  </body>
+      <div class='title-results' ng-controller='titleSearch as title'>
+        <input type="text" ng-model='title.term' placeholder='Enter Title'>
+        <button type="button" class="btn btn-primary" ng-click='title.search()'>Search</button>
+        <table  class="table">
+         <tr ng-repeat="title in title.books" >
+          <td>{{title.volumeInfo.title}}</td>
+          <td>{{title.volumeInfo.subtitle}}</td>
+          <td><em>by</em></td>
+          <td>{{title.volumeInfo.authors}}</td>
+          <td>{{title.searchInfo.textSnippet}}<td>
+            <td><em>published</em></td>
+            <td>{{title.volumeInfo.publishedDate}}</td>
+            <td><td><a ng-href="{{title.volumeInfo.previewLink}}"/>Preview</a></td>
+            <td><img ng-src="{{title.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
+            <td><a ng-show="title.accessInfo.pdf.isAvailable" ng-href="{{title.accessInfo.pdf.downloadLink}}"/>download</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div> 
+  <!-- Modules -->
+  <script src='./app.js'></script>
+  <!-- Controllers -->
+  <script src= 'controllers/MainController.js'></script>
+</body>
 </html>
+<!-- 
+Icons made by Freepik from www.flaticon.com</div> -->
