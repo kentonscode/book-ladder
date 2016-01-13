@@ -18,17 +18,17 @@
     </div>
   </div>
   <div class='fav-books container-fuild'>
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-2 col-sm-offset-4 col-md-offset-4 col-lg-offset-4 ">
-      <h1 class='fav-authors-text'>Favorite Authors</h1>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-2 col-sm-offset-4 col-md-offset-4 col-lg-offset-4 ">
+        <h1 class='fav-authors-text'>Favorite Authors</h1>
+      </div>
     </div>
-  </div>
-  <div class="row">
+    <div class="row">
       <div class="col-md-12">
-        <div class="col-xs-6 col-md-4 text-center">
+        <div class="col-xs-6 col-md-4">
           <img src="./img/hemingway.jpg" class="fav-author img-responsive" alt="hemingway" />
         </div>
-        <div class="col-xs-6 col-md-4 text-center">
+        <div class="col-xs-6 col-md-4">
           <img src="./img/freud.jpg" class="fav-author img-responsive" alt="freud" />
         </div>
         <div class="col-xs-6 col-md-4 text-center">
@@ -36,13 +36,13 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <div class="col-xs-6 col-md-4 text-center">
+            <div class="col-xs-6 col-md-4">
               <img src="./img/shakespeare.jpg" class="fav-author img-responsive" alt="shakespeare" />
             </div>
-            <div class="col-xs-6 col-md-4 text-center">
+            <div class="col-xs-6 col-md-4">
               <img src="./img/ulysses.jpg" class="fav-author img-responsive" alt="ulysses" />
             </div>
-            <div class="col-xs-6 col-md-4 text-center">
+            <div class="col-xs-6 col-md-4">
               <img src="./img/alice.jpg" class="fav-author img-responsive" alt="alice" />
             </div>
           </div>
@@ -50,54 +50,53 @@
       </div>
     </div>
   </div>
-</div>
-<div class='search container-fuild'>
-  <div class='results' ng-controller='authorSearch as author'>
-    <div class='row author col-xs-offset-3 col-sm-offset-8 col-md-offset-8 col-lg-offset-8'>
-      <input type="text" ng-model='author.term' placeholder='Enter Author'>
-      <button type="button" class="btn btn-primary" ng-click='author.search()'>Search</button>
+  <div class='search container-fuild'>
+    <div class='results' ng-controller='authorSearch as author'>
+      <div class='row author col-xs-offset-3 col-sm-offset-8 col-md-offset-8 col-lg-offset-8'>
+        <input type="text" ng-model='author.term' placeholder='Enter Author'>
+        <button type="button" class="btn btn-primary" ng-click='author.search()'>Search</button>
+      </div>
+      <table  class="table">
+        <tr ng-repeat="book in author.books">
+          <td>{{book.volumeInfo.title}}</td>
+          <td>{{book.volumeInfo.subtitle}}</td>
+          <td><em>by</em></td>
+          <td>{{book.volumeInfo.authors}}</td>
+          <td>{{book.searchInfo.textSnippet}}</td>
+          <td><em>published</em></td>
+          <td>{{book.volumeInfo.publishedDate}}</td>
+          <td><a ng-href="{{book.volumeInfo.previewLink}}"/>Preview</a></td>
+          <td><img ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
+          <td><a ng-show="book.accessInfo.pdf.isAvailable" ng-href="{{book.accessInfo.pdf.downloadLink}}"/>download</a></td>
+        </tr>
+      </table>
     </div>
-    <table  class="table">
-      <tr ng-repeat="book in author.books" >
-       <td>{{book.volumeInfo.title}}</td>
-       <td>{{book.volumeInfo.subtitle}}</td>
-       <td><em>by</em></td>
-       <td>{{book.volumeInfo.authors}}</td>
-       <td>{{book.searchInfo.textSnippet}}</td>
-       <td><em>published</em></td>
-       <td>{{book.volumeInfo.publishedDate}}</td>
-       <td><a ng-href="{{book.volumeInfo.previewLink}}"/>Preview</a></td>
-       <td><img ng-src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
-       <td><a ng-show="book.accessInfo.pdf.isAvailable" ng-href="{{book.accessInfo.pdf.downloadLink}}"/>download</a></td>
-     </tr>
-   </table>
- </div>
- <div class='title-results' ng-controller='titleSearch as title'>
-  <div class='row author col-xs-offset-3 col-sm-offset-8 col-md-offset-8 col-lg-offset-8'>
-    <input type="text" ng-model='title.term' placeholder='Enter Title'> 
-    <button type="button" class="btn btn-primary" ng-click='title.search()'>Search</button>
-  </div> 
-  <table  class="table">
-    <tr ng-repeat="title in title.books" >
-      <td>{{title.volumeInfo.title}}</td>
-      <td>{{title.volumeInfo.subtitle}}</td>
-      <td><em>by</em></td>
-      <td>{{title.volumeInfo.authors}}</td>
-      <td>{{title.searchInfo.textSnippet}}</td>
-      <td><em>published</em></td>
-      <td>{{title.volumeInfo.publishedDate}}</td>
-      <td><a ng-href="{{title.volumeInfo.previewLink}}"/>Preview</a></td>
-      <td><img ng-src="{{title.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
-      <td><a ng-show="title.accessInfo.pdf.isAvailable" ng-href="{{title.accessInfo.pdf.downloadLink}}"/>download</a></td>
-    </tr>
-  </table>
-</div>
-</div>
-<!-- Modules -->
-<script src='./app.js'></script>
-<!-- Controllers -->
-<script src='controllers/MainController.js'></script>
-<script src='./js/main.js'></script>
+    <div class='title-results' ng-controller='titleSearch as title'>
+      <div class='row author col-xs-offset-3 col-sm-offset-8 col-md-offset-8 col-lg-offset-8'>
+        <input type="text" ng-model='title.term' placeholder='Enter Title'> 
+        <button type="button" class="btn btn-primary" ng-click='title.search()'>Search</button>
+      </div> 
+      <table  class="table">
+        <tr ng-repeat="title in title.books" >
+          <td>{{title.volumeInfo.title}}</td>
+          <td>{{title.volumeInfo.subtitle}}</td>
+          <td><em>by</em></td>
+          <td>{{title.volumeInfo.authors}}</td>
+          <td>{{title.searchInfo.textSnippet}}</td>
+          <td><em>published</em></td>
+          <td>{{title.volumeInfo.publishedDate}}</td>
+          <td><a ng-href="{{title.volumeInfo.previewLink}}"/>Preview</a></td>
+          <td><img ng-src="{{title.volumeInfo.imageLinks.smallThumbnail}}" alt="thumbnail" /></td>
+          <td><a ng-show="title.accessInfo.pdf.isAvailable" ng-href="{{title.accessInfo.pdf.downloadLink}}"/>download</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <!-- Modules -->
+  <script src='./app.js'></script>
+  <!-- Controllers -->
+  <script src='controllers/MainController.js'></script>
+  <script src='./js/main.js'></script>
 </body>
 </html>
 <!-- 
