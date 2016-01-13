@@ -50,14 +50,25 @@
       </div>
     </div>
   </div>
-  <div class='search container-fuild'>
-    <div id='search'>
-      <div class='results' ng-controller='authorSearch as author'>
-        <div class='row author col-xs-offset-3 col-sm-offset-8 col-md-offset-8 col-lg-offset-8'>
-          <input type="text" ng-model='author.term' placeholder='Enter Author'>
-          <button type="button" class="btn btn-primary" ng-click='author.search()'>Search</button>
+  <div class='kindle-reading container-fuild'>
+    <div class='row col-md-4'>
+      <div class='what is site'>
+        <h1>What is Book Ladder?</h1>
+        <p>Book ladder is Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam soluta aliquam aut. Dicta eius possimus, libero aspernatur voluptatum, facere minus quos odit error non iure doloribus voluptate eveniet consequatur qui?
         </div>
-        <table  class="table">
+      </div>
+      <div class="row col-md-offset-8">
+        <img src="./img/kindle-reading.jpg" class="kindle img-responsive" alt="kindle reading" />
+      </div>  
+    </div>
+    <div class='search container-fuild'>
+      <div id='search'>
+        <div class='results' ng-controller='authorSearch as author'>
+          <div class='row author col-xs-offset-3 col-sm-offset-8 col-md-offset-8 col-lg-offset-8'>
+           <input type="text" ng-model='author.term' placeholder='Enter Author'>
+           <button type="button" class="btn btn-primary" ng-click='author.search()'>Search</button>
+         </div>
+         <table class="table">
           <tr ng-repeat="book in author.books">
             <td>{{book.volumeInfo.title}}</td>
             <td>{{book.volumeInfo.subtitle}}</td>
