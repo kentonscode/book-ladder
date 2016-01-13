@@ -3,6 +3,10 @@
   src: url(./font/constantine.ttf);
 }
 
+.fav-books{
+  margin-top: 10%;
+}
+
 .main-img {
   position: absolute;
   display: inline-block;
@@ -18,4 +22,8 @@
   margin-top: 40%;
   margin-left: 43%;
   max-width: 10%;
+}
+
+.resutls {
+  float-right:50%;
 }
