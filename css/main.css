@@ -5,7 +5,8 @@
 
 .fav-books{
   margin-top: 7%;
-  margin-left: 10%;
+  background-color: whitesmoke;
+  width: 100%;
 }
 
 .main-img {
@@ -29,7 +30,7 @@
   float-right:50%;
 }
 
-.top-five {
+.fav-author {
 
 }
 
@@ -39,8 +40,16 @@
 
 .fav-author {
   padding-top: 5%;
+  margin-left: 20%;
+}
+
+@media only screen and (max-width: 700px) {
+  .fav-author {
+    margin-left: 2%;
+  }
 }
 
 .fav-authors-text {
   font-family: constantine;
+
 }
