@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville);
+
 @font-face {
   font-family: constantine;
   src: url(./font/constantine.ttf);
@@ -25,7 +27,7 @@
 }
 
 .fav-authors-text {
-  font-family: constantine;
+  font-family: helvetica;
 }
 
 .main-img {
@@ -38,8 +40,7 @@
   float-right:50%;
 }
 
-.search {
-  margin-top: 10%;
+.search-area {
   background-color: whitesmoke;
 }
 
@@ -50,10 +51,18 @@
   max-width: 10%;
 }
 
+#search {
+  font-size: 25px;
+}
+
+.title {
+  font-family: helvetica;
+}
+
 .what-is-site p {
   margin-right: 5%;
   margin-left: 5%;
-  font-family: constantine;
+  font-family: 'Libre Baskerville', serif;
   font-size: 20px;
 }
 
